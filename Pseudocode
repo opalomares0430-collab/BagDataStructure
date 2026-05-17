@@ -1,0 +1,35 @@
+START
+
+Create a homework bag object
+
+Add "Math" to the bag
+Add "Science" to the bag
+Add another "Math" to the bag
+Add "History" to the bag
+Add "English" to the bag
+
+Display all homework assignments in the bag
+
+Check if "Science" exists in the bag
+Display result
+
+Check if "Art" exists in the bag
+Display result
+
+Count how many times "Math" appears
+Display result
+
+Count how many times "History" appears
+Display result
+
+Remove one "Math" assignment from the bag
+
+Display updated bag contents
+
+Check if "Math" still exists
+Display result
+
+Count remaining "Math" assignments
+Display result
+
+END
