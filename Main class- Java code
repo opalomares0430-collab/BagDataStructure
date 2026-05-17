@@ -1,0 +1,49 @@
+package bagstructure;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Create a Bag object
+        Bag<String> homeworkBag = new Bag<>();
+
+        // Add homework assignments
+        homeworkBag.add("Math");
+        homeworkBag.add("Science");
+        homeworkBag.add("Math");
+        homeworkBag.add("History");
+        homeworkBag.add("English");
+
+        // Display bag contents
+        System.out.println("Homework Bag Contents:");
+        homeworkBag.printBag();
+
+        // Test contains method
+        System.out.println("\nContains Science? "
+                + homeworkBag.contains("Science"));
+
+        System.out.println("Contains Art? "
+                + homeworkBag.contains("Art"));
+
+        // Test count method
+        System.out.println("\nNumber of Math assignments: "
+                + homeworkBag.count("Math"));
+
+        System.out.println("Number of History assignments: "
+                + homeworkBag.count("History"));
+
+        // Remove one Math assignment
+        homeworkBag.remove("Math");
+
+        // Print updated bag
+        System.out.println("\nBag after removing one Math assignment:");
+        homeworkBag.printBag();
+
+        // Test methods again
+        System.out.println("\nContains Math? "
+                + homeworkBag.contains("Math"));
+
+        System.out.println("Number of Math assignments: "
+                + homeworkBag.count("Math"));
+    }
+}
