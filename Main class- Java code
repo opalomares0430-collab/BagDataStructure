@@ -4,46 +4,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Create a Bag object
-        Bag<String> homeworkBag = new Bag<>();
+        Bag<String> bagOne = new Bag<>();
+        Bag<String> bagTwo = new Bag<>();
 
-        // Add homework assignments
-        homeworkBag.add("Math");
-        homeworkBag.add("Science");
-        homeworkBag.add("Math");
-        homeworkBag.add("History");
-        homeworkBag.add("English");
+        bagOne.add("Math");
+        bagOne.add("Science");
+        bagOne.add("Math");
+        bagOne.add("English");
 
-        // Display bag contents
-        System.out.println("Homework Bag Contents:");
-        homeworkBag.printBag();
+        bagTwo.add("History");
+        bagTwo.add("Math");
+        bagTwo.add("Science");
+        bagTwo.add("Art");
 
-        // Test contains method
-        System.out.println("\nContains Science? "
-                + homeworkBag.contains("Science"));
+        System.out.println("Bag One:");
+        bagOne.printBag();
+        System.out.println("Size of Bag One: " + bagOne.size());
 
-        System.out.println("Contains Art? "
-                + homeworkBag.contains("Art"));
+        System.out.println("\nBag Two:");
+        bagTwo.printBag();
+        System.out.println("Size of Bag Two: " + bagTwo.size());
 
-        // Test count method
-        System.out.println("\nNumber of Math assignments: "
-                + homeworkBag.count("Math"));
+        bagOne.merge(bagTwo);
 
-        System.out.println("Number of History assignments: "
-                + homeworkBag.count("History"));
+        System.out.println("\nMerged Bag:");
+        bagOne.printBag();
+        System.out.println("Size of Merged Bag: " + bagOne.size());
 
-        // Remove one Math assignment
-        homeworkBag.remove("Math");
+        Bag<String> distinctBag = bagOne.distinct();
 
-        // Print updated bag
-        System.out.println("\nBag after removing one Math assignment:");
-        homeworkBag.printBag();
-
-        // Test methods again
-        System.out.println("\nContains Math? "
-                + homeworkBag.contains("Math"));
-
-        System.out.println("Number of Math assignments: "
-                + homeworkBag.count("Math"));
+        System.out.println("\nDistinct Bag:");
+        distinctBag.printBag();
+        System.out.println("Size of Distinct Bag: " + distinctBag.size());
     }
 }
