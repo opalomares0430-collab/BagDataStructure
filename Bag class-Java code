@@ -1,43 +1,31 @@
 package bagstructure;
 
-
 import java.util.ArrayList;
 
-// Generic Bag class
 public class Bag<T> {
 
-    // ArrayList to store items in the bag
     private ArrayList<T> items;
 
-    // Default constructor
     public Bag() {
         items = new ArrayList<>();
     }
 
-    // Add an item to the bag
     public void add(T item) {
         items.add(item);
     }
 
-    // Remove one occurrence of an item
     public void remove(T item) {
         items.remove(item);
     }
 
-    // Check if item exists in the bag
     public boolean contains(T item) {
         return items.contains(item);
     }
 
-    // Count how many times an item appears
     public int count(T item) {
-
         int total = 0;
 
-        // Loop through all items
         for (T currentItem : items) {
-
-            // Compare items
             if (currentItem.equals(item)) {
                 total++;
             }
@@ -46,7 +34,28 @@ public class Bag<T> {
         return total;
     }
 
-    // Print all bag contents
+    public int size() {
+        return items.size();
+    }
+
+    public void merge(Bag<T> otherBag) {
+        for (T item : otherBag.items) {
+            this.items.add(item);
+        }
+    }
+
+    public Bag<T> distinct() {
+        Bag<T> distinctBag = new Bag<>();
+
+        for (T item : items) {
+            if (!distinctBag.contains(item)) {
+                distinctBag.add(item);
+            }
+        }
+
+        return distinctBag;
+    }
+
     public void printBag() {
         System.out.println(items);
     }
